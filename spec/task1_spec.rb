@@ -1,4 +1,4 @@
-require './task1'
+require './task2'
 require 'rspec-benchmark'
 include RSpec::Benchmark::Matchers
 
@@ -16,8 +16,14 @@ describe 'Task1' do
     expect(File.read(output_file_path)).to eq(expected_output)
   end
 
-  it 'mets performance' do
+  it 'meets performance' do
     expect { work(data_file_path_100k) }.to perform_under(1200).ms
+  end
+
+  it 'meets memory allocation' do
+    expect { work('spec/fixtures/1_000_lines.txt') }.to perform_allocation(String => 695349, 
+                                                                           Hash => 425632, 
+                                                                           Array => 322608).bytes
   end
 end
 
