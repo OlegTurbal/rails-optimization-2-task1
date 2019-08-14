@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gem 'pry'
+gem 'rspec'
+gem 'benchmark-ips'
+gem 'kalibera'
+gem 'stackprof'
+gem 'ruby-prof'
+gem 'rspec-benchmark'
+gem 'oj'
+gem 'ruby-progressbar'
